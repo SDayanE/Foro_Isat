@@ -39,7 +39,7 @@ export default function NuevaPregunta() {
       </div>
       <form className="Formulario" onSubmit={enviar}>
         <label htmlFor="CampoTitulo">Titulo</label>
-        <input id="CampoTitulo" minLength="12" maxLength="180" placeholder="Ej. ¿Como relaciono dos tablas en MySQL?" required />
+        <input id="CampoTitulo" minLength="12" maxLength="150" placeholder="Ej. ¿Como relaciono dos tablas en MySQL?" required />
         <label htmlFor="CampoCuerpo">Descripcion</label>
         <textarea id="CampoCuerpo" rows="5" minLength="20" maxLength="4000" placeholder="Estoy intentando..., ya probe..., pero ocurre que..." required></textarea>
         <fieldset className="GrupoTemas">
