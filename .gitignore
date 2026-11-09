@@ -1,0 +1,24 @@
+# Dependencias (se reinstalan con npm install)
+node_modules/
+
+# Archivos generados al compilar
+dist/
+build/
+coverage/
+*.local
+.eslintcache
+
+# Datos privados: nunca se suben
+.env
+.env.*
+!.env.example
+
+# Registros y archivos temporales
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Configuracion personal del editor
+.vscode/
+.idea/
