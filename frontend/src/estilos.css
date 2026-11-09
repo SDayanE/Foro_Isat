@@ -1,0 +1,171 @@
+/* Colores de la pagina: cambia aqui un color y se cambia en toda la web */
+:root {
+  --Fondo: #0b0e11;
+  --Panel: #11161b;
+  --PanelDos: #171c22;
+  --Campo: #0c1015;
+  --Borde: #2a3239;
+  --BordeCampo: #353d45;
+  --Texto: #f1f4ee;
+  --TextoSuave: #a3adb7;
+  --TextoTenue: #8b95a0;
+  --Verde: #b7ff00;
+  --VerdeTinte: #1c2411;
+  --Rojo: #ff4058;
+  --RojoTinte: #321820;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; background: var(--Fondo); color: var(--Texto); font-family: "Manrope", system-ui, sans-serif; font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+::selection { color: #0b0e11; background: var(--Verde); }
+:focus-visible { outline: 2px solid var(--Verde); outline-offset: 2px; }
+.SoloLectores { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* Parte de arriba: logo, buscador y botones */
+.Cabecera { position: sticky; top: 0; z-index: 20; background: var(--Panel); border-bottom: 2px solid var(--Verde); }
+.CabeceraInterior { display: flex; align-items: center; gap: 20px; width: min(1100px, calc(100% - 40px)); min-height: 66px; margin: 0 auto; }
+.Marca { display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0; }
+.MarcaTexto { font-size: 20px; font-weight: 800; letter-spacing: -1px; }
+.MarcaPunto { color: var(--Verde); }
+
+.Buscador { display: flex; align-items: stretch; flex: 1; min-width: 0; max-width: 620px; height: 42px; border: 1px solid var(--BordeCampo); border-radius: 3px; background: var(--Campo); overflow: hidden; transition: border-color .2s; }
+.Buscador:focus-within { border-color: var(--Verde); }
+.IconoBusqueda { align-self: center; flex-shrink: 0; margin: 0 4px 0 12px; color: var(--TextoTenue); }
+.Buscador input { flex: 1; min-width: 0; padding: 0 10px; border: 0; outline: 0; color: var(--Texto); background: transparent; font-size: 13px; }
+.Buscador input::placeholder { color: #727d87; }
+.BotonBuscar { padding: 0 18px; border: 0; border-left: 1px solid var(--BordeCampo); border-radius: 0; color: var(--Verde); background: var(--PanelDos); font-size: 12px; font-weight: 800; }
+.BotonBuscar:hover { color: #0b0e11; background: var(--Verde); }
+
+.AccionesCabecera { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.Boton { display: inline-flex; justify-content: center; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid transparent; border-radius: 4px; font-size: 12px; font-weight: 800; white-space: nowrap; transition: background .18s, border-color .18s, color .18s; }
+.BotonPrimario { color: #111500; background: var(--Verde); }
+.BotonPrimario:hover { background: #ccff52; }
+.BotonSecundario { color: var(--Texto); background: var(--PanelDos); border-color: #303740; }
+.BotonSecundario:hover { border-color: #687c34; }
+.BotonTexto { padding: 0 10px; color: #c4cbd2; background: transparent; }
+.BotonTexto:hover { color: var(--Verde); }
+
+/* Contenido principal: titulo de cada pantalla */
+.Principal { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 70px; }
+.EncabezadoVista { margin-bottom: 22px; }
+.EncabezadoVista h1 { margin: 0 0 4px; font-size: clamp(24px, 3vw, 30px); letter-spacing: -.8px; line-height: 1.2; }
+.EncabezadoVista p { margin: 0; color: var(--TextoSuave); font-size: 13px; }
+.EnlaceVolver { margin: 0 0 14px; padding: 0; border: 0; color: var(--TextoSuave); background: transparent; font-size: 12px; font-weight: 700; }
+.EnlaceVolver:hover { color: var(--Verde); }
+
+/* Tarjetas de los temas */
+.RejillaTemas { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.TarjetaTema { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 18px 18px 16px; border: 1px solid var(--Borde); border-left: 3px solid var(--Borde); border-radius: 5px; color: var(--Texto); background: var(--Panel); text-align: left; transition: border-color .18s, background .18s; }
+.TarjetaTema:hover { border-color: #46532c; border-left-color: var(--Verde); background: #141a1f; }
+.NombreTema { font-size: 16px; font-weight: 800; letter-spacing: -.3px; }
+.CantidadTema { display: flex; flex-direction: column; align-items: flex-end; color: var(--Verde); font-family: "DM Mono", monospace; font-size: 20px; font-weight: 500; line-height: 1.1; }
+.CantidadTema small { margin-top: 3px; color: var(--TextoTenue); font-family: "Manrope", sans-serif; font-size: 10px; font-weight: 600; }
+.TarjetaTema.SinPreguntas .CantidadTema { color: var(--TextoTenue); }
+
+/* Lista de preguntas */
+
+.TarjetaPregunta { padding: 18px 10px; border-bottom: 1px solid var(--Borde); }
+.TarjetaPregunta:hover { background: #11171b; }
+.MetaPregunta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; color: var(--TextoTenue); font-size: 11px; }
+.NombreUsuario { color: #dbe1d8; font-weight: 800; }
+.EstadoPregunta { padding: 2px 7px; border-radius: 3px; font-size: 10px; font-weight: 800; }
+.EstadoAbierta { color: #ff7d8e; background: var(--RojoTinte); }
+.EstadoResuelta { color: var(--Verde); background: #202b11; }
+.TituloPregunta { margin: 0; font-size: 16px; font-weight: 800; line-height: 1.45; letter-spacing: -.2px; }
+.ExtractoPregunta { display: -webkit-box; margin: 5px 0 10px; overflow: hidden; color: var(--TextoSuave); font-size: 12.5px; line-height: 1.65; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.PiePregunta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.EtiquetasPregunta { display: flex; flex-wrap: wrap; gap: 6px; }
+.Etiqueta { padding: 3px 8px; border: 1px solid #333b43; border-radius: 3px; color: #d5ddd2; background: var(--PanelDos); font-size: 11px; font-weight: 700; }
+.Etiqueta:hover { border-color: #536b1c; color: var(--Verde); background: var(--VerdeTinte); }
+.AccionPregunta { margin-left: auto; padding: 0; border: 0; color: var(--TextoSuave); background: transparent; font-size: 12px; font-weight: 700; }
+.AccionPregunta:hover { color: var(--Verde); }
+
+/* Mensaje cuando no hay preguntas */
+.EstadoVacio { max-width: 420px; padding: 50px 0; }
+.EstadoVacio h2 { margin: 0 0 6px; font-size: 18px; }
+.EstadoVacio p { margin: 0 0 16px; color: var(--TextoSuave); font-size: 13px; }
+
+/* Formularios */
+
+.Formulario { display: grid; gap: 8px; }
+.Formulario label, .FormularioRespuesta label, .Formulario legend { margin-top: 8px; color: #e3e9df; font-size: 12px; font-weight: 800; }
+.Formulario label small, .Formulario legend small { display: block; margin-top: 2px; color: var(--TextoTenue); font-size: 11px; font-weight: 500; }
+.Formulario input, .Formulario textarea, .Formulario select, .FormularioRespuesta textarea { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--BordeCampo); border-radius: 3px; outline: 0; color: var(--Texto); background: var(--Campo); font-size: 13px; transition: border-color .2s; }
+.Formulario textarea, .FormularioRespuesta textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+.Formulario input:focus, .Formulario textarea:focus, .Formulario select:focus, .FormularioRespuesta textarea:focus { border-color: var(--Verde); }
+.Formulario input::placeholder, .Formulario textarea::placeholder, .FormularioRespuesta textarea::placeholder { color: #727d87; }
+.Formulario select option { background: var(--Panel); }
+.AccionesFormulario { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ErrorFormulario { margin: 4px 0 0; padding: 9px 11px; border-left: 3px solid var(--Rojo); border-radius: 3px; color: #ffb3bd; background: var(--RojoTinte); font-size: 12px; }
+.NotaFormulario { margin: 6px 0 0; color: var(--TextoTenue); font-size: 11px; line-height: 1.6; }
+
+/* Casillas para elegir los temas de una pregunta */
+.GrupoTemas { min-width: 0; margin: 0; padding: 0; border: 0; }
+.GrupoTemas legend { padding: 0; margin-bottom: 8px; }
+.ListaTemasFormulario { display: flex; flex-wrap: wrap; gap: 7px; }
+.ChipTema { position: relative; margin: 0 !important; font-weight: 700 !important; }
+.ChipTema input { position: absolute; opacity: 0; width: 1px !important; min-height: 0 !important; padding: 0 !important; }
+.ChipTema span { display: inline-block; padding: 6px 10px; border: 1px solid #333b43; border-radius: 3px; color: #cad2c9; background: var(--PanelDos); font-size: 12px; cursor: pointer; }
+.ChipTema span:hover { border-color: #536b1c; }
+.ChipTema input:checked + span { border-color: var(--Verde); color: var(--Verde); background: var(--VerdeTinte); }
+.ChipTema input:focus-visible + span { outline: 2px solid var(--Verde); outline-offset: 2px; }
+
+/* Pagina de una pregunta con sus respuestas */
+.ContenidoDetalle { padding: 6px 0 22px; border-bottom: 1px solid var(--Borde); }
+.DetalleMeta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: var(--TextoTenue); font-size: 12px; }
+.CuerpoDetalle { margin: 0 0 14px; color: var(--TextoSuave); font-size: 13.5px; line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
+.AccionesDetalle { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.AccionesDetalle .Boton { min-height: 34px; padding: 0 12px; }
+.AccionReporte { margin-left: auto; padding: 0; border: 0; color: #ff7383; background: transparent; font-size: 12px; font-weight: 700; }
+.AccionReporte:hover { color: #ff9ca8; }
+.SeccionRespuestas { padding-top: 20px; }
+.TituloRespuestas { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.TituloRespuestas h3 { margin: 0; font-size: 15px; }
+.TituloRespuestas > span { color: var(--TextoTenue); font-size: 12px; }
+.ListaRespuestas { display: grid; gap: 10px; }
+.TarjetaRespuesta { padding: 13px 14px; border: 1px solid #303840; border-radius: 5px; background: var(--PanelDos); }
+.MetaRespuesta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; color: var(--TextoTenue); font-size: 11px; }
+.TextoRespuesta { margin: 0; color: var(--TextoSuave); font-size: 13px; line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+.RespuestaVacia { margin: 0; padding: 18px; border: 1px dashed #394149; border-radius: 5px; color: var(--TextoSuave); font-size: 12.5px; text-align: center; }
+.FormularioRespuesta { display: grid; gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--Borde); }
+.FormularioRespuesta label { margin-top: 0; }
+.FormularioRespuesta textarea { min-height: 80px; }
+.AccionesRespuesta { display: flex; justify-content: flex-end; }
+
+
+/* Celulares y pantallas pequenas */
+@media (max-width: 820px) {
+  .CabeceraInterior { flex-wrap: wrap; gap: 10px 14px; padding: 10px 0; }
+  .Buscador { order: 3; flex-basis: 100%; max-width: none; }
+}
+@media (max-width: 560px) {
+  .CabeceraInterior, .Principal { width: calc(100% - 28px); }
+  .Boton { min-height: 38px; padding: 0 11px; }
+  .BotonTexto { padding: 0 8px; }
+  .Principal { padding-top: 26px; }
+  .RejillaTemas { grid-template-columns: 1fr; }
+  .TarjetaPregunta { padding: 16px 0; }
+  .AccionPregunta { margin-left: 0; width: 100%; text-align: left; }
+}
+/* Menos movimiento para quien lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* Enlaces que antes eran botones (ahora cada cosa es una pagina) */
+.TituloPregunta a { color: inherit; }
+.TituloPregunta a:hover { color: var(--Verde); }
+.EnlaceVolver { display: inline-block; }
+.AccionPregunta { display: inline-block; }
+.TituloDetallePagina { margin: 10px 0; font-size: clamp(20px, 3vw, 26px); line-height: 1.35; letter-spacing: -.6px; }
+.TituloRespuestas h2 { margin: 0; font-size: 15px; }
+
+/* Formularios que ocupan una pagina entera */
+.TarjetaFormulario { max-width: 460px; margin: 0 auto; padding: 26px; border: 1px solid var(--BordeCampo); border-radius: 8px; background: var(--Panel); }
+.TarjetaAncha { max-width: 640px; }
+.EstadoVacio h1 { margin: 0 0 6px; font-size: 22px; }

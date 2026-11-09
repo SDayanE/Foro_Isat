@@ -11,7 +11,10 @@ Foro de preguntas y respuestas para los aprendices del Tecnólogo en Análisis y
 
 | Parte | Estado |
 | --- | --- |
-| Base de datos MySQL (`foro`, siete tablas) | Modelo y script definidos en `database/esquema.sql` |
+
+
+| Base de datos MySQL (`foro`, siete tablas) | Script esquema.sql agregado al repositorio |
+
 | Frontend React + Vite | Prototipo funcionando con datos de ejemplo (`datos.js`) |
 | Backend Node.js + Express + API REST | Pendiente (tareas T-03 a T-13 del backlog) |
 
