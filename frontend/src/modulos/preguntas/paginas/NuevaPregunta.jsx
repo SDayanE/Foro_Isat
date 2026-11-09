@@ -1,7 +1,7 @@
 // Formulario para hacer una pregunta. Por ahora solo es visual.
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TEMAS } from "../datos.js";
+import { TEMAS } from "../../../datos/datos.js";
 
 export default function NuevaPregunta() {
   const irA = useNavigate();

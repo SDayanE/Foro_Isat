@@ -1,6 +1,6 @@
 // Una pregunta completa con sus respuestas. La pregunta sale de la direccion (/pregunta/3)
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PREGUNTAS, idDelTema, plural } from "../datos.js";
+import { PREGUNTAS, idDelTema, plural } from "../../../datos/datos.js";
 
 export default function Pregunta() {
   const { id } = useParams();

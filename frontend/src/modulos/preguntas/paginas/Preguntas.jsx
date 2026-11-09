@@ -1,8 +1,8 @@
 // Todas las preguntas. Aqui funciona el buscador:
 // lo que se escribio llega en la direccion (#/preguntas?q=texto)
 import { Link, useSearchParams } from "react-router-dom";
-import { PREGUNTAS, plural } from "../datos.js";
-import TarjetaPregunta from "../componentes/TarjetaPregunta.jsx";
+import { PREGUNTAS, plural } from "../../../datos/datos.js";
+import TarjetaPregunta from "../../../compartido/componentes/TarjetaPregunta.jsx";
 
 // Pasa el texto a minusculas y le quita las tildes (asi "logica" encuentra "Logica")
 function normalizar(texto) {

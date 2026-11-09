@@ -1,6 +1,6 @@
 // Pagina de inicio: las tarjetas de los temas con su cantidad de preguntas
 import { Link } from "react-router-dom";
-import { TEMAS, PREGUNTAS, plural } from "../datos.js";
+import { TEMAS, PREGUNTAS, plural } from "../../../datos/datos.js";
 
 // Cuenta cuantas preguntas tiene un tema
 function contar(nombre) {

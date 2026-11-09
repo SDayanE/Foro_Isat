@@ -1,6 +1,6 @@
 // Una pregunta dentro de una lista. Recibe la pregunta como "pregunta".
 import { Link } from "react-router-dom";
-import { idDelTema, plural } from "../datos.js";
+import { idDelTema, plural } from "../../datos/datos.js";
 
 export default function TarjetaPregunta({ pregunta }) {
   const claseEstado = pregunta.estado === "Resuelta" ? "EstadoResuelta" : "EstadoAbierta";

@@ -1,7 +1,7 @@
 // Pagina de un tema: sus preguntas. El tema sale de la direccion (/tema/sql)
 import { Link, useParams } from "react-router-dom";
-import { TEMAS, PREGUNTAS, plural } from "../datos.js";
-import TarjetaPregunta from "../componentes/TarjetaPregunta.jsx";
+import { TEMAS, PREGUNTAS, plural } from "../../../datos/datos.js";
+import TarjetaPregunta from "../../../compartido/componentes/TarjetaPregunta.jsx";
 
 export default function Tema() {
   const { temaId } = useParams(); // lee la parte ":temaId" de la direccion
