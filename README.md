@@ -148,3 +148,5 @@ El backlog tiene 23 tareas priorizadas con MoSCoW y repartidas en cuatro sprints
 | Fecha | Origen | Observación | Cómo se atendió |
 | --- | --- | --- | --- |
 | 26/10/26 | Sesión sincrónica | La estructura del repositorio y la ramificación deben coincidir con el plan técnico | Se adoptó tal cual la estrategia de la sección 5 y la estructura de la sección 2 |
+
+Texto de prueba para demostrar la recuperacion de versiones.
